@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "algorithm": "SHA512withRSA",
+  "certificate_sha256": "D5:02:BE:67:0F:93:6A:40:9B:7E:25:B8:F6:E4:47:57:09:0F:11:97:AB:C5:99:42:B3:4A:C3:55:34:AF:99:14"
+}
