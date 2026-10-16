@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "algorithm": "SHA512withRSA",
+  "certificate_sha256": "REPLACE_WITH_YOUR_RELEASE_CERTIFICATE_SHA256_FINGERPRINT",
+  "config_version": 1,
+  "notes": "Replace the placeholder with the signing certificate SHA-256 digest for the intended release. This public JSON is configuration only, not proof of authenticity."
+}
