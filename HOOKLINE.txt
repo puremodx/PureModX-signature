@@ -1,0 +1,18 @@
+PUREKILLER MT MANAGER HOOKLINE
+
+Add these four classes to the target DEX:
+- SignatureGuard.smali
+- RemoteSignatureGuard.smali
+- PureKillerStartup.smali
+- PureKillerWorker.smali
+
+Add android.permission.INTERNET inside the existing manifest's <manifest> element.
+
+In the target app's existing onCreate method, insert this one line AFTER the existing invoke-super call:
+invoke-static {p0}, Lcom/puremodx/purekiller/PureKillerStartup;->start(Landroid/content/Context;)V
+
+The line uses p0 and allocates no additional registers. Do not replace the original onCreate method. If onCreate is an Activity method, insert after super.onCreate(Bundle); if it is Application.onCreate, insert after super.onCreate().
+
+WARNING: Current JSON certificate fingerprint was copied from the screenshot and may identify the displayed manager APK, not the target app. Replace it with the target app's release signing-certificate SHA-256 digest before enabling enforcement.
+
+The worker reads GitHub Raw on a background thread and fails closed on network/config/pin errors; offline launches may close. This client-side check can be patched out and GitHub Raw is public config, not a security authority. Test only on apps you own or are authorized to modify.
